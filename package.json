@@ -1,0 +1,30 @@
+{
+  "name": "gulp-runtime",
+  "version": "0.0.1",
+  "description": "Various gulpfile scripts",
+  "license": "MIT",
+  "repository": "shadowmint/gulp-runtime",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "main": "./lib/task",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "dependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp-util": "^3.0.7",
+    "handlebars": "^4.0.5",
+    "through2": "^2.0.0",
+    "vinyl": "^1.1.0",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-nodeunit": "github:shadowmint/gulp-nodeunit#0.0.4",
+    "run-sequence": "^1.1.5"
+  }
+}
