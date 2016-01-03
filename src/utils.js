@@ -81,3 +81,29 @@ export function write(target, value, relative) {
     return false;
   }
 }
+
+/**
+ * Wait for a bunch of tasks to finish
+ * You'd use this like:
+ *
+ *    gulp.task('foo', (callback) => {
+ *      var streams = [ gulp.src(...).dest(...), gulp.src(...).dest(...) ];
+ *      wait_for(streams, callback);
+ *    });
+ *
+ * @param streams An array of streams which have not yet ended
+ * @param callback The callback to invoke when all streams end
+ */
+export function wait_for(streams, callback) {
+  var count = streams.length;
+  var offset = 0;
+  var handler = () => {
+    offset += 1;
+    if (offset == count) {
+      callback();
+    }
+  };
+  for (var i = 0; i < streams.length; ++i) {
+    streams[i].on('end', handler);
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "gulp-runtime",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Various gulpfile scripts",
   "license": "MIT",
   "repository": "shadowmint/gulp-runtime",
