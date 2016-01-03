@@ -12,10 +12,13 @@ export var root = './';
  * By default this is run the first time we run gulp
  */
 export function default_args(config) {
-  config.PRODUCTION = yargs.argv.mode == 'production';
-  if ((!config.PRODUCTION) && (read('.build', true) == null)) {
-    console.log("Never run gulp before, defaulting to production build");
-    config.PRODUCTION = true;
+  config.PRODUCTION = _yargs2.default.argv.mode == 'production';
+  try { read('.build', true); }
+  catch(err) {
+    if (!config.PRODUCTION) {
+      console.log("Never run gulp before, defaulting to production build");
+      config.PRODUCTION = true;
+    }
   }
 }
 
