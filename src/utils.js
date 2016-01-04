@@ -12,7 +12,7 @@ export var root = './';
  * By default this is run the first time we run gulp
  */
 export function default_args(config) {
-  config.PRODUCTION = _yargs2.default.argv.mode == 'production';
+  config.PRODUCTION = yargs.argv.mode == 'production';
   try { read('.build', true); }
   catch(err) {
     if (!config.PRODUCTION) {

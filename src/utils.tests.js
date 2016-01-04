@@ -2,6 +2,13 @@ import * as ut from './utils';
 
 ut.root = __dirname + '..';
 
+export function test_default_args(test) {
+  var config = {};
+  ut.default_args(config);
+  test.ok(true);
+  test.done();
+}
+
 export function test_template(test) {
   var template = ut.template("tests/template.html", true);
   test.ok(template);
